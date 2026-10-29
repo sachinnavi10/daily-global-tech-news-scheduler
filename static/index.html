@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Daily Global Tech News</title>
+  <link rel="stylesheet" href="/static/styles.css">
+  <script src="/static/app.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="page-width">
+      <p class="eyebrow">Daily briefing</p>
+      <h1>Global Tech News</h1>
+      <p class="intro">A concise view of the technology stories that matter.</p>
+    </div>
+  </header>
+
+  <main class="page-width">
+    <section class="panel controls" aria-labelledby="schedule-heading">
+      <div>
+        <p class="eyebrow">Automatic updates</p>
+        <h2 id="schedule-heading">Refresh schedule</h2>
+        <p id="schedule-status" class="muted">Loading schedule…</p>
+      </div>
+      <form id="schedule-form" class="schedule-form">
+        <label for="schedule-select">Refresh news</label>
+        <select id="schedule-select" name="schedule" required></select>
+        <button type="submit">Save schedule</button>
+      </form>
+    </section>
+
+    <section class="panel" aria-labelledby="news-heading">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Latest stories</p>
+          <h2 id="news-heading">Technology news</h2>
+        </div>
+        <p id="last-updated" class="muted">Waiting for the first briefing…</p>
+      </div>
+
+      <form id="search-form" class="filters">
+        <label class="search-control" for="search-input">
+          Search news
+          <input id="search-input" name="keyword" type="search" placeholder="Try Python or cloud">
+        </label>
+        <label for="category-select">
+          Filter by category
+          <select id="category-select" name="category">
+            <option value="">All categories</option>
+            <option>AI</option>
+            <option>Agentic AI</option>
+            <option>Quantum Computing</option>
+            <option>Cloud</option>
+            <option>Cybersecurity</option>
+            <option>Programming</option>
+            <option>Developer Tools</option>
+            <option>Startups</option>
+            <option>Technology Companies</option>
+            <option>Other Technology</option>
+          </select>
+        </label>
+        <button type="submit" class="secondary-button">Search</button>
+      </form>
+      <p id="news-status" class="notice" role="status"></p>
+      <div id="news-list" class="news-grid" aria-live="polite"></div>
+    </section>
+
+    <section class="panel" aria-labelledby="briefing-heading">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Today's summary</p>
+          <h2 id="briefing-heading">Daily briefing</h2>
+        </div>
+        <p id="health-status" class="muted" role="status">Checking application…</p>
+      </div>
+      <p id="briefing-status" class="notice" role="status"></p>
+      <div id="briefing-content"></div>
+    </section>
+  </main>
+
+  <footer class="page-width footer">
+    News is collected automatically by the Python scheduler. The application must remain running.
+  </footer>
+</body>
+</html>
